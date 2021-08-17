@@ -24,40 +24,40 @@
 # Payroll Apps - Laravel 8
 1. Struktur Database
     ## a. tabel hari kerja
-        ⋅⋅* id (PK)
-        ⋅⋅* jumlah_hari_kerja
+        1. id (PK)
+        2. jumlah_hari_kerja
     ## b. tabel jabatan (relasi ke tabel karyawan:jabatan_id)
-        ⋅⋅* id (PK)
-        ⋅⋅* nama_jabatan
-        ⋅⋅* gaji_pokok
-        ⋅⋅* tunjangan_jabatan
-        ⋅⋅* tunjangan_makan_perhari
-        ⋅⋅* tunjangan_transport_perhari
+        1. id (PK)
+        2. nama_jabatan
+        3. gaji_pokok
+        4. tunjangan_jabatan
+        5. tunjangan_makan_perhari
+        6. tunjangan_transport_perhari
     ## c. tabel divisi (relasi ke tabel karyawan:divisi_id)
-        ⋅⋅* id (PK)
-        ⋅⋅* nama
+        1. id (PK)
+        2. nama
      ## d. tabel karyawan
-        ⋅⋅* id (PK)
-        ⋅⋅* nama_karyawan
-        ⋅⋅* tanggal_masuk
-        ⋅⋅* jabatan_id (FK) -> relasi ke tabel jabatan
-        ⋅⋅* divisi_id (FK) -> relasi ke tabel divisi
+        1. id (PK)
+        2. nama_karyawan
+        3. tanggal_masuk
+        4. jabatan_id (FK) -> relasi ke tabel jabatan
+        5. divisi_id (FK) -> relasi ke tabel divisi
      ## e. tabel gaji (relasi ke tabel karyawan:karyawan_id dan relasi ke tabel absensi:absensi_id)
-        ⋅⋅* id (PK)
-        ⋅⋅* karyawan_id (FK) -> relasi ke tabel karyawan
-        ⋅⋅* absensi_id (FK) -> relasi ke tabel absensi
-        ⋅⋅* tanggal_penggajian
-        ⋅⋅* gaji_pokok
-        ⋅⋅* tunjangan_jabatan
-        ⋅⋅* tunjangan_makan
-        ⋅⋅* tunjangan_transport
+        1. id (PK)
+        2. karyawan_id (FK) -> relasi ke tabel karyawan
+        3. absensi_id (FK) -> relasi ke tabel absensi
+        4. tanggal_penggajian
+        5. gaji_pokok
+        6. tunjangan_jabatan
+        7. tunjangan_makan
+        8. tunjangan_transport
      ## f. tabel Absensi
-        ⋅⋅* id (PK) -> relasi ke tabel gaji
-        ⋅⋅* jumlah_hari_kerja
-        ⋅⋅* jumlah_hari_sakit
-        ⋅⋅* jumlah_hari_izin
-        ⋅⋅* jumlah_hari_cuti
-        ⋅⋅* jumlah_hari_alpa
-        ⋅⋅* potongan_tunjangan_transport
-        ⋅⋅* potongan_tunjangan_makan
-        ⋅⋅* potongan_gaji_pokok
+        1. id (PK) -> relasi ke tabel gaji
+        2. jumlah_hari_kerja
+        3. jumlah_hari_sakit
+        4. jumlah_hari_izin
+        5. jumlah_hari_cuti
+        6. jumlah_hari_alpa
+        7. potongan_tunjangan_transport
+        8. potongan_tunjangan_makan
+        9. potongan_gaji_pokok
