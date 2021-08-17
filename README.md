@@ -23,41 +23,41 @@
 
 # Payroll Apps - Laravel 8
 1. Struktur Database
-    ..a. tabel hari kerja
-        * id (PK)
-        * jumlah_hari_kerja
-    ..b. tabel jabatan (relasi ke tabel karyawan:jabatan_id)
-        * id (PK)
-        * nama_jabatan
-        * gaji_pokok
-        * tunjangan_jabatan
-        * tunjangan_makan_perhari
-        * tunjangan_transport_perhari
-    ..c. tabel divisi (relasi ke tabel karyawan:divisi_id)
-        * id (PK)
-        * nama
-    ..d. tabel karyawan
-        * id (PK)
-        * nama_karyawan
-        * tanggal_masuk
-        * jabatan_id (FK) -> relasi ke tabel jabatan
-        * divisi_id (FK) -> relasi ke tabel divisi
-    ..e. tabel gaji (relasi ke tabel karyawan:karyawan_id dan relasi ke tabel absensi:absensi_id)
-        * id (PK)
-        * karyawan_id (FK) -> relasi ke tabel karyawan
-        * absensi_id (FK) -> relasi ke tabel absensi
-        * tanggal_penggajian
-        * gaji_pokok
-        * tunjangan_jabatan
-        * tunjangan_makan
-        * tunjangan_transport
-    ..f. tabel Absensi
-        * id (PK) -> relasi ke tabel gaji
-        * jumlah_hari_kerja
-        * jumlah_hari_sakit
-        * jumlah_hari_izin
-        * jumlah_hari_cuti
-        * jumlah_hari_alpa
-        * potongan_tunjangan_transport
-        * potongan_tunjangan_makan
-        * potongan_gaji_pokok
+    ## a. tabel hari kerja
+        ⋅⋅* id (PK)
+        ⋅⋅* jumlah_hari_kerja
+    ## b. tabel jabatan (relasi ke tabel karyawan:jabatan_id)
+        ⋅⋅* id (PK)
+        ⋅⋅* nama_jabatan
+        ⋅⋅* gaji_pokok
+        ⋅⋅* tunjangan_jabatan
+        ⋅⋅* tunjangan_makan_perhari
+        ⋅⋅* tunjangan_transport_perhari
+    ## c. tabel divisi (relasi ke tabel karyawan:divisi_id)
+        ⋅⋅* id (PK)
+        ⋅⋅* nama
+     ## d. tabel karyawan
+        ⋅⋅* id (PK)
+        ⋅⋅* nama_karyawan
+        ⋅⋅* tanggal_masuk
+        ⋅⋅* jabatan_id (FK) -> relasi ke tabel jabatan
+        ⋅⋅* divisi_id (FK) -> relasi ke tabel divisi
+     ## e. tabel gaji (relasi ke tabel karyawan:karyawan_id dan relasi ke tabel absensi:absensi_id)
+        ⋅⋅* id (PK)
+        ⋅⋅* karyawan_id (FK) -> relasi ke tabel karyawan
+        ⋅⋅* absensi_id (FK) -> relasi ke tabel absensi
+        ⋅⋅* tanggal_penggajian
+        ⋅⋅* gaji_pokok
+        ⋅⋅* tunjangan_jabatan
+        ⋅⋅* tunjangan_makan
+        ⋅⋅* tunjangan_transport
+     ## f. tabel Absensi
+        ⋅⋅* id (PK) -> relasi ke tabel gaji
+        ⋅⋅* jumlah_hari_kerja
+        ⋅⋅* jumlah_hari_sakit
+        ⋅⋅* jumlah_hari_izin
+        ⋅⋅* jumlah_hari_cuti
+        ⋅⋅* jumlah_hari_alpa
+        ⋅⋅* potongan_tunjangan_transport
+        ⋅⋅* potongan_tunjangan_makan
+        ⋅⋅* potongan_gaji_pokok
