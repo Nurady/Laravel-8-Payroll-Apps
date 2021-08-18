@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\{DashboardController, CrudController};
+use App\Http\Controllers\{
+    DashboardController, 
+    CrudController, 
+    ConfigController,
+    DivisionController
+};
 // use App\Http\Controllers\{DashboardController, CrudController, LoginController};
 
 Route::get('/', function () {
@@ -35,6 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::put('update-data/{id}', [CrudController::class, 'update'])->name('update-data');
     Route::delete('delete-data/{id}', [CrudController::class, 'delete'])->name('delete-data');
     // Route::get('logout', [LoginController::class, 'logout'])->name('logout.post');
+
+    // Payroll Apss
+    Route::resource('config', ConfigController::class);
+    Route::resource('divisi', DivisionController::class);
 });
 
 // Route::get('login', [LoginController::class, 'index'])->name('login');
@@ -46,3 +55,5 @@ Route::post('login/post', [LoginController::class, 'login'])->name('login.post')
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

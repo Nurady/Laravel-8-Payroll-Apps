@@ -1,25 +1,34 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="{{ route('dashboard') }}">Stisla</a>
+        <a href="{{ route('dashboard') }}">PAYROLL APPS</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">St</a>
       </div>
       <ul class="sidebar-menu">
           <li class="menu-header">Dashboard</li>
-          <li><a href="{{ route('dashboard') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
-
-          <li class="menu-header">Starter</li>
-          <li class="nav-item dropdown">
-            <a href="{{ route('dashboard') }}" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-              <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-            </ul>
+          <li class="sidebar-menu {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">
+            <a href="{{ route('dashboard') }}" class="nav-link">
+              <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </a>
           </li>
-          <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+
+          <li class="menu-header">Konfigurasi</li>
+          <li class="sidebar-menu {{ Request::segment(1) === 'config' ? 'active' : null }}">
+            <a href="{{ route('config.index') }}" class="nav-link">
+              <i class="fas fa-columns"></i>
+              <span>Setup Aplikasi</span>
+            </a>
+          </li>
+
+          <li class="sidebar-menu {{ Request::segment(1) === 'divisi' ? 'active' : null }}">
+            <a class="nav-link" href="{{ route('divisi.index') }}">
+              <i class="far fa-square"></i> 
+              <span>Divisi</span>
+            </a>
+          </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
             <ul class="dropdown-menu">

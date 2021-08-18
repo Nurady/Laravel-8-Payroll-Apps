@@ -61,3 +61,10 @@
         7. potongan_tunjangan_transport
         8. potongan_tunjangan_makan
         9. potongan_gaji_pokok
+
+2. Dynamic Active Link
+3. CRUD Eloquent menggunakan modal bootstrap
+4. Validation Modal Bootstrap
+5. CRUD Divisi
+6. Laravel Meta Manager
+7. Alert Component Dinamis props
