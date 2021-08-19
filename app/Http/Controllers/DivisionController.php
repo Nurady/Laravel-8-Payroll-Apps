@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Division;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class DivisionController extends Controller
 {
@@ -12,8 +14,20 @@ class DivisionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        // $this->authorize('akses_divisi', Division::class);
+    }
+
+
     public function index()
     {
+        // $role= Auth::user()->roles()->where('role_id', 2)->get();
+        // dd($role);
+        
+        if (!Gate::allows('akses')) {
+            return redirect()->route('dashboard');
+        }
         $divisions = Division::all();
         return view('divisi.index', compact('divisions'));
     }

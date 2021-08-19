@@ -23,12 +23,14 @@
             </a>
           </li>
 
-          <li class="sidebar-menu {{ Request::segment(1) === 'divisi' ? 'active' : null }}">
-            <a class="nav-link" href="{{ route('divisi.index') }}">
-              <i class="far fa-square"></i> 
-              <span>Divisi</span>
-            </a>
-          </li>
+          @can('akses')
+            <li class="sidebar-menu {{ Request::segment(1) === 'divisi' ? 'active' : null }}">
+              <a class="nav-link" href="{{ route('divisi.index') }}">
+                <i class="far fa-square"></i> 
+                <span>Divisi</span>
+              </a>
+            </li>
+          @endcan
 
           <li class="sidebar-menu {{ Request::segment(1) === 'karyawan' ? 'active' : null }}">
             <a class="nav-link" href="{{ route('karyawan.index') }}">

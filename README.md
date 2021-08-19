@@ -77,4 +77,6 @@
 14. One to many relationship, FK Tabel details (employee_id) relasi dengan PK employees
 15. One to many relationship Inverse/belongsTo, Tabel details -> employees
 16. Many to many relationship (belongsToMany), Tabel users dan Tabel Roles, Pivot role_user
+17. Hak akses menggunakan Policy Method
+18. Hak akses user dari database menggunakan Gate Method
 
