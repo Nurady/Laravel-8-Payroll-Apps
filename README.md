@@ -68,3 +68,13 @@
 5. CRUD Divisi
 6. Laravel Meta Manager
 7. Alert Component Dinamis props
+8. Database Seeder
+9. Database Factory
+10. One to one relationship, FK Tabel addresses (employee_id) relasi dengan PK tabel employees
+11. One to one relationship Inverse/belongsTo, FK Tabel employees (division_id, position_id) relasi dengan PK tabel divisions dan tabel positions
+12. Laravel tinker
+13. Number Format
+14. One to many relationship, FK Tabel details (employee_id) relasi dengan PK employees
+15. One to many relationship Inverse/belongsTo, Tabel details -> employees
+16. Many to many relationship (belongsToMany), Tabel users dan Tabel Roles, Pivot role_user
+

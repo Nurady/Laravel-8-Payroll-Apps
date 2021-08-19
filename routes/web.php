@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     DashboardController, 
     CrudController, 
     ConfigController,
-    DivisionController
+    DivisionController,
+    EmployeeController,
 };
 // use App\Http\Controllers\{DashboardController, CrudController, LoginController};
 
@@ -44,6 +45,7 @@ Route::middleware('auth')->group(function () {
     // Payroll Apss
     Route::resource('config', ConfigController::class);
     Route::resource('divisi', DivisionController::class);
+    Route::resource('karyawan', EmployeeController::class);
 });
 
 // Route::get('login', [LoginController::class, 'index'])->name('login');
