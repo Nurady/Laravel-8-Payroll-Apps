@@ -8,9 +8,11 @@
             <h1>Master Divisi</h1>
           </div>
           @if (session()->has('success')) 
-            <x-alert type="success" title="Horeeyyyy">
-                {{ session()->get('success') }}
-            </x-alert>
+            <div id="hide">
+              <x-alert type="success" title="Horeeyyyy">
+                  {{ session()->get('success') }}
+              </x-alert>
+            </div>
           @endif
 
           @if (session()->has('warning')) 
@@ -122,4 +124,16 @@
         </section>
     </div>
 @endsection
+
+@push('after-script')
+  <script>
+      @if (session()->has('success')) 
+        $(document).ready(function() {
+          setTimeout(() => {
+            $('#hide').remove(); 
+          }, 5000);
+        });       
+      @endif
+  </script>
+@endpush
 

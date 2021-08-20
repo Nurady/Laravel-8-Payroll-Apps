@@ -109,3 +109,4 @@
 22. Menu_Role Seeder
 23. Manajemen Akses - Navigasi Menu Berdasarkan Akses Dari Database, Join Table
 24. Manajemen Akses - Active State Navigation Dinamis
+25. Fitur Effect jQuery (Hide flash Message)
