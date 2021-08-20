@@ -23,17 +23,17 @@
 
 # Payroll Apps - Laravel 8
 1. Struktur Database
-    ## a. tabel hari kerja
+     ## a. tabel hari kerja
         1. id (PK)
         2. jumlah_hari_kerja
-    ## b. tabel jabatan (relasi ke tabel karyawan:jabatan_id)
+     ## b. tabel jabatan (relasi ke tabel karyawan:jabatan_id)
         1. id (PK)
         2. nama_jabatan
         3. gaji_pokok
         4. tunjangan_jabatan
         5. tunjangan_makan_perhari
         6. tunjangan_transport_perhari
-    ## c. tabel divisi (relasi ke tabel karyawan:divisi_id)
+     ## c. tabel divisi (relasi ke tabel karyawan:divisi_id)
         1. id (PK)
         2. nama
      ## d. tabel karyawan
@@ -61,6 +61,30 @@
         7. potongan_tunjangan_transport
         8. potongan_tunjangan_makan
         9. potongan_gaji_pokok
+     ## g. tabel Menu
+        1. id (PK) -> relasi ke tabel menu_role
+        2. nama_menu
+        3. level_menu
+        4. master_menu
+        5. url
+        6. icon
+        7. aktif
+        8. nomor_urut
+     ## h. tabel users
+        1. menambahkan role_id
+     ## i. tabel roles
+        1. id
+        2. nama
+     ## j. tabel role_user (PIVOT)
+        1. user_id
+        2. role_id
+     ## k. tabel menu_role
+        1. role_id
+        2. menu_id
+        3. akses
+        4. tambah
+        5. edit
+        6. hapus
 
 2. Dynamic Active Link
 3. CRUD Eloquent menggunakan modal bootstrap
@@ -79,4 +103,9 @@
 16. Many to many relationship (belongsToMany), Tabel users dan Tabel Roles, Pivot role_user
 17. Hak akses menggunakan Policy Method
 18. Hak akses user dari database menggunakan Gate Method
-
+19. Membuat Helper cek_akses
+20. Manajemen Akses Multi Level User
+21. Menu Seeder
+22. Menu_Role Seeder
+23. Manajemen Akses - Navigasi Menu Berdasarkan Akses Dari Database, Join Table
+24. Manajemen Akses - Active State Navigation Dinamis

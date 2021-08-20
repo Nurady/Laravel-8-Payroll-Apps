@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Division;
+use App\Helpers\SiteHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -24,7 +25,8 @@ class DivisionController extends Controller
     {
         // $role= Auth::user()->roles()->where('role_id', 2)->get();
         // dd($role);
-        
+        // dd(SiteHelpers::cek_akses());
+
         if (!Gate::allows('akses')) {
             return redirect()->route('dashboard');
         }

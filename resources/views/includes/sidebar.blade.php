@@ -38,7 +38,27 @@
               <span>Karyawan</span>
             </a>
           </li>
-          <li class="menu-header">Stisla</li>
+
+          {{-- Menggunakan Helpers Multi User --}}
+          <li class="menu-header">HELPERS</li>
+          @foreach (SiteHelpers::main_menu() as $item)
+            @if($item->url === 'dashboard')
+              <li class="sidebar-menu {{ Request::segment(1) === 'dashboard' ? 'active' : null }}">
+            @elseif($item->url === 'config.index')
+              <li class="sidebar-menu {{ Request::segment(1) === 'config' ? 'active' : null }}">
+            @elseif($item->url === 'divisi.index')
+              <li class="sidebar-menu {{ Request::segment(1) === 'divisi' ? 'active' : null }}">
+            @else
+              <li class="sidebar-menu {{ Request::segment(1) === 'karyawan' ? 'active' : null }}">
+            @endif
+              <a class="nav-link" href="{{ Route($item->url) }}">
+                <i class="{{ $item->icon }}"></i> 
+                <span>{{ $item->nama_menu }}</span>
+              </a>
+            </li>
+          @endforeach
+
+          {{-- <li class="menu-header">Stisla</li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
             <ul class="dropdown-menu">
@@ -135,13 +155,13 @@
               <li><a href="utilities-subscribe.html">Subscribe</a></li>
             </ul>
           </li>
-          <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
+          <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li> --}}
         </ul>
 
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+        {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
           <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
             <i class="fas fa-rocket"></i> Documentation
           </a>
-        </div>
+        </div> --}}
     </aside>
 </div>

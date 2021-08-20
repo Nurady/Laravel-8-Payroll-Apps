@@ -35,7 +35,7 @@
               </div>
             </div>
           @endif --}}
-          
+
           {{-- @can('tambah_divisi', App\Models\Division::class) --}}
           @can('tambah_data') 
             <div class="row">
@@ -60,6 +60,7 @@
                       </div>
                       <div class="mb-5">
                           <button type="submit" class="btn btn-icon icon-left btn-primary"><i class="fa fa-plus"></i> Tambah Data</button>
+                          {{ SiteHelpers::cek_akses()->name }}
                       </div>
                   </form>
               </div>
